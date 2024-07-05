@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+  <!-- Page Header Start -->
+  <div class="container-fluid bg-secondary py-5">
+    <div class="container py-5">
+        <div class="row align-items-center py-4">
+            <div class="col-md-6 text-center text-md-left">
+                <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Products Range</h1>
+            </div>
+            <div class="col-md-6 text-center text-md-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="btn btn-outline-primary" href="">Home</a>
+                    <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                    <a class="btn btn-outline-primary disabled" href="">Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+ <!-- Products Start -->
+ <div class="container-fluid py-5">
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col text-center mb-4">
+                <h1 class="mb-4">Explore Our Range of Products</h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+            {% for pro in pros %}
+                <div class="col-lg-4 p-0 pt-5 pt-lg-0">
+                    
+                        <div class="p-2">
+                            <img class="h-100 img-fluid" src="{{ pro.thumbnail.url }}" alt="">
+                            <div class="d-flex flex-column text-center bg-light p-4">
+                                <h5 class="mb-3">{{ pro.pro_name }}</h5>
+                                <p class="m-0">{{ pro.description|truncatechars:150 }}</p>
+                            
+                            </div>
+                            <a href="{% url 'product' pro.id  %}" class="btn btn-primary btn-block">More Details</a>
+                        </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+
+{% endblock %}

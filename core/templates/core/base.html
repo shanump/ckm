@@ -1,0 +1,203 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CKM Groups</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white pr-3" href="">Help & Support</a>
+                    
+                        <span class="text-white">|</span>
+                        <a class="text-white pl-3" href="">GSTIN : 32BUVPM0068G1 ZH</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-white pl-3" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container position-relative" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="/" class="navbar-brand">
+                    <img src="{% static 'img/logo-3.png' %}">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="/" class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+                        <a href="/about" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+                        <a href="/products" class="nav-item nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">Products</a>
+                        <a href="/gallery" class="nav-item nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">Gallery</a>
+                        <a href="/contact" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Under Nav Start -->
+    <div class="container-fluid bg-white py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-left mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                        <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h5>Office Address</h5>
+                            <p class="m-0">Arangadath, Koyilandy, KL- 673 306</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-center mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                        <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h5>Email Us</h5>
+                            <p class="m-0">mail@ckmgroups.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-right mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                        <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h5>Call Us</h5>
+                            <p class="m-0">+012 345 6789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Under Nav End -->
+
+
+
+    <!--        CONTENT AREA        -->
+
+
+    {% block content %}
+
+
+	{% endblock %}
+
+
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
+        <div class="row pt-5 pl-5">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Office Address</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Main Road, Arangadath</p>
+                    <p>Koyilandy, Kozhikode</p>
+                    <p>Kerala- 673 306.</p>
+                
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Contact</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope mr-2"></i>mail@ckmgroups.com</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="/about"><i class="fa fa-angle-right mr-2"></i>About</a>
+                    <a class="text-white mb-2" href="/products"><i class="fa fa-angle-right mr-2"></i>Products</a>
+                    <a class="text-white mb-2" href="/gallery"><i class="fa fa-angle-right mr-2"></i>Gallery</a>
+                    <a class="text-white" href="/contact"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container border-top border-secondary pt-5">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">www.ckmgroups.com</a>. All Rights Reserved. Powered by
+                <a class="text-white font-weight-bold" href="http://www.neolive.online" target="_blank">Neo Technologies</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% static 'mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

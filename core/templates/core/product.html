@@ -1,0 +1,123 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+  <!-- Page Header Start -->
+  <div class="container-fluid bg-secondary py-5">
+    <div class="container py-5">
+        <div class="row align-items-center py-4">
+            <div class="col-md-6 text-center text-md-left">
+                <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Product Details</h1>
+            </div>
+            <div class="col-md-6 text-center text-md-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="btn btn-outline-primary" href="/">Home</a>
+                    <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                    <a class="btn btn-outline-primary " href="/products">Products</a>
+                    <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                    <a class="btn btn-outline-primary disabled" href="">{{ pro.pro_name }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header Start -->
+
+
+<!-- Detail Start -->
+<div class="container py-5">
+    <div class="row pt-5">
+        <div class="col-lg-8">
+            <div class="d-flex flex-column text-left mb-4">
+                <h1 class="mb-4 section-title">{{ pro.pro_name }}</h1>
+            </div>
+
+            <div class="mb-5">
+                <img class="img-fluid w-100 mb-4" src="{{ pro.image.url }}" alt="Image">
+                <p>
+                    {{ pro.description }}
+                </p>
+
+                {% if imgs %}
+                    <h2 class="mb-4">More Images</h2>
+
+                    <div class="row">
+
+                        {% for img in imgs %}
+                            <div class="col-lg-4 mb-3">
+                                <a class="btn btn-outline-primary" href="{{img.image.url }}" data-lightbox="portfolio">
+                                    <img class="img-fluid mb-1 mt-1" src="{{ img.thumbnail.url }}" alt="Image">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                
+                {% endif %}
+                    
+
+            </div>
+           
+        </div>
+
+        <div class="col-lg-4 mt-5 mt-lg-0">
+            <div class="d-flex flex-column text-center bg-secondary mb-5 py-5 px-4">
+                <img src="{% static 'img/logo-3.png' %}" class="img-fluid mx-auto mb-3">
+                <h3 class="text-primary mb-3">Our Mission</h3>
+                <p class="text-white m-0">We are dedicated to offering products that not only meet but exceed the highest standards of durability, functionality, and design. Our goal is to inspire creativity and enhance the beauty and functionality of spaces through our innovative solutions.</p>
+            </div>
+            <div class="mb-5">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Keyword">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary"><i
+                                    class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="mb-5">
+                <h3 class="mb-4 section-title">Categories</h3>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Category -1
+                        <span class="badge badge-primary badge-pill">150</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Category -2
+                        <span class="badge badge-primary badge-pill">131</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Category -3
+                        <span class="badge badge-primary badge-pill">78</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Category -4
+                        <span class="badge badge-primary badge-pill">56</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ECategory -5
+                        <span class="badge badge-primary badge-pill">98</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-5">
+                <h3 class="mb-4 section-title">Featured Products</h3>
+                <div class="d-flex flex-wrap m-n1">
+                    {% for pro in pros %}
+                        <a href="{% url 'product' pro.id  %}" class="btn btn-outline-primary m-1">{{ pro.pro_name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+           
+           
+        </div>
+    </div>
+</div>
+<!-- Detail End -->
+
+
+{% endblock %}
