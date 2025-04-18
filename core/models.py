@@ -40,10 +40,16 @@ class Products(models.Model):
     def __str__(self):
         return self.pro_name
 
-    def save(self, *args, **kwargs):
-        self.thumbnail = crop_image(self.image)
-        super().save(*args, **kwargs)  
 
+
+    def save(self, *args, **kwargs):
+        # Save normally first so the image file is available
+        super().save(*args, **kwargs)
+
+        # Then, if there's an image and no thumbnail yet, generate thumbnail
+        if self.image and not self.thumbnail:
+            self.thumbnail = crop_image(self.image)
+            super().save(update_fields=['thumbnail'])  # Avoid infinite loop
     
 
 class Pro_images(models.Model):

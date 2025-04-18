@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-6 text-center text-md-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="btn btn-outline-primary" href="">Home</a>
+                    <a class="btn btn-outline-primary" href="/">Home</a>
                     <i class="fas fa-angle-double-right text-primary mx-2"></i>
                     <a class="btn btn-outline-primary disabled" href="">Products</a>
                 </div>
@@ -43,7 +43,7 @@
                             <img class="h-100 img-fluid" src="{{ pro.thumbnail.url }}" alt="">
                             <div class="d-flex flex-column text-center bg-light p-4">
                                 <h5 class="mb-3">{{ pro.pro_name }}</h5>
-                                <p class="m-0">{{ pro.description|truncatechars:150 }}</p>
+                                <p class="m-0">{{ pro.description|truncatechars:130 }}</p>
                             
                             </div>
                             <a href="{% url 'product' pro.id  %}" class="btn btn-primary btn-block">More Details</a>

@@ -38,11 +38,13 @@
             <div class="mb-5">
                 <img class="img-fluid w-100 mb-4" src="{{ pro.image.url }}" alt="Image">
                 <p>
-                    {{ pro.description }}
+                    {{ pro.description | safe }}
                 </p>
+        
 
+                <br>
                 {% if imgs %}
-                    <h2 class="mb-4">More Images</h2>
+                    <h4 class="mb-4">More Images</h4>
 
                     <div class="row">
 
@@ -64,7 +66,7 @@
 
         <div class="col-lg-4 mt-5 mt-lg-0">
             <div class="d-flex flex-column text-center bg-secondary mb-5 py-5 px-4">
-                <img src="{% static 'img/logo-3.png' %}" class="img-fluid mx-auto mb-3">
+                <img src="{% static 'img/ckm-logo-new.png' %}" class="img-fluid mx-auto mb-3">
                 <h3 class="text-primary mb-3">Our Mission</h3>
                 <p class="text-white m-0">We are dedicated to offering products that not only meet but exceed the highest standards of durability, functionality, and design. Our goal is to inspire creativity and enhance the beauty and functionality of spaces through our innovative solutions.</p>
             </div>
@@ -82,26 +84,14 @@
             <div class="mb-5">
                 <h3 class="mb-4 section-title">Categories</h3>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Category -1
-                        <span class="badge badge-primary badge-pill">150</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Category -2
-                        <span class="badge badge-primary badge-pill">131</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Category -3
-                        <span class="badge badge-primary badge-pill">78</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Category -4
-                        <span class="badge badge-primary badge-pill">56</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        ECategory -5
-                        <span class="badge badge-primary badge-pill">98</span>
-                    </li>
+              
+                    {% for cat in cats %}
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <h6>{{ cat.cat_name }}<h6>
+                            <span class="badge badge-primary badge-pill"></span>
+                        </li>
+                    {% endfor %}
+
                 </ul>
             </div>
             <div class="mb-5">
